@@ -87,6 +87,22 @@ app.delete("/todos/:id",(req,res)=>{
     })
 })
 
+//delete completed tasks by deleteMany
+app.delete("/todos",(req,res)=>{
+    console.log('37', req.params.id)
+    Todo.deleteMany({ isCompleted: true}, (err, deleteObj)=>{
+        
+        if(err){
+            console.log("ERROR", err)
+        }else{
+            deleteObj.deleteCount=== 0
+           ? res.status(404).json("There are not completed todo found")
+           : res.json("Delete all completed todo Successfully")
+        }
+    })
+})
+
+
 //change the title
 app.put("/todos/:id",(req,res)=>{
     Todo.updateOne(
@@ -103,6 +119,22 @@ app.put("/todos/:id",(req,res)=>{
     })
 })
 
+//change one task by put request
+app.put("/todos/:id/:isCompleted",(req,res)=>{
+    console.log('124:', req.params)
+    Todo.updateOne(
+        {_id: req.params.id},
+        {isCompleted: req.params.isCompleted},
+        (err, updateObj)=>{
+        if(err){
+            console.log("ERROR", err)
+        }else{
+            updateObj.modifiedCount===1
+           ? res.json("Update this Task Successfully")
+           : res.status(404).json("this todos is not found")
+        }
+    })
+})
 app.listen(5000,() =>{
     console.log("SERVER IS WORKING")
 })
