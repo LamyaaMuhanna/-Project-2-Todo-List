@@ -20,7 +20,47 @@ app.get("/todos",(req,res)=>{
         }
     })
 })
+/*
+the down endpoint is replacec to these two
+//return the completed tasks by get request
+// app.get("/completed", (req,res)=>{
+//     Todo.find({ isCompleted: true }, (err,data)=>{
+//         if(err){
+//             console.log("ERROR")
+//         }else{
+//             console.log(data)
+//             res.json(data)
+//         }
+//     })
+// })
 
+// //return uncompleted tasks by get request
+
+// app.get("/uncompleted", (req,res)=>{
+//     Todo.find({ isCompleted: false }, (err,data)=>{
+//         if(err){
+//             console.log("ERROR")
+//         }else{
+//             console.log(data)
+//             res.json(data)
+//         }
+//     })
+// })*/
+//query params  ?key=value&key=value
+app.get("filter", (req,res)=>{
+    console.log(req.query)
+    Todo.find({ isCompleted: req.query.isCompleted}, (err,data)=>{
+        if(err){
+            console.log("ERROR")
+        }else{
+            console.log(data)
+            res.json(data)
+        }
+    })
+})
+
+
+//creat new tasks
 app.post("/todos",(req,res)=>{
     Todo.create({}, (err, newTask)=>{
         console.log('25:', req.body)
