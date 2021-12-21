@@ -4,7 +4,7 @@ const dbURI= "mongodb://localhost:27017/TodoListV01"
 
 mongoose.connect(dbURI)
 
-//extra
+//extra http://localhost:5000/todos
 const db=mongoose.connection
 
 db.on('error',(err)=>{

@@ -1,8 +1,10 @@
 const { error } = require('console')
 const express = require('express')
+const cors = require('cors')
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 const db= require('./db')
 const Todo= require('./todo')
@@ -21,18 +23,18 @@ app.get("/todos",(req,res)=>{
     })
 })
 /*
-the down endpoint is replacec to these two
+//the down endpoint is replacec to these two
 //return the completed tasks by get request
-// app.get("/completed", (req,res)=>{
-//     Todo.find({ isCompleted: true }, (err,data)=>{
-//         if(err){
-//             console.log("ERROR")
-//         }else{
-//             console.log(data)
-//             res.json(data)
-//         }
-//     })
-// })
+app.get("/completed", (req,res)=>{
+    Todo.find({ isCompleted: true }, (err,data)=>{
+        if(err){
+            console.log("ERROR")
+        }else{
+            console.log(data)
+            res.json(data)
+        }
+    })
+})
 
 // //return uncompleted tasks by get request
 
@@ -47,7 +49,7 @@ the down endpoint is replacec to these two
 //     })
 // })*/
 //query params  ?key=value&key=value
-app.get("filter", (req,res)=>{
+app.get("/filter", (req,res)=>{
     console.log(req.query)
     Todo.find({ isCompleted: req.query.isCompleted}, (err,data)=>{
         if(err){
@@ -62,7 +64,7 @@ app.get("filter", (req,res)=>{
 
 //creat new tasks
 app.post("/todos",(req,res)=>{
-    Todo.create({}, (err, newTask)=>{
+    Todo.create(req.body, (err, newTask)=>{
         console.log('25:', req.body)
         if(err){
             console.log("ERROR", err)
