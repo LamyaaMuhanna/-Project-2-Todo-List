@@ -1,5 +1,21 @@
 .App {
   text-align: center;
-  border: red solid 5px;
+  border: Thistle solid ;
+  margin: 200px 200px 200px 200px;
 }
 
+.Todos p{
+  text-align: center;
+  margin: 0px 10px 0px 10px;
+  background-color: Thistle; 
+  padding: 40px 90px 40px 90px;
+  font-size:20px;
+  font-family: cursive;
+}
+.Todos button{
+  background-color: White;
+  border-radius: 10px;
+  font-size: 15px;
+  width: 50px;
+  border: Thistle solid ;
+}
