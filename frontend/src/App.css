@@ -4,6 +4,16 @@
   margin: 200px 200px 200px 200px;
 }
 
+.App button{
+  background-color: White;
+  border-radius: 10px;
+  font-size: 15px;
+  width: 200px;
+  border: Thistle solid ;
+  font-family: cursive;
+
+}
+
 .Todos p{
   text-align: center;
   margin: 0px 10px 0px 10px;

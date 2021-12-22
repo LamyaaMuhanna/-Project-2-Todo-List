@@ -47,9 +47,22 @@ export default function App() {
       })
   }
 
+  //to edit the todos
+  const toggleTodo = (id, newStatus)=>{
+    axios
+      .put(`http://localhost:5000/todos/${id}/${newStatus}`)
+      .then((response)=>{
+        getData()
+      })
+      .catch((err)=>{
+        console.log('ERR: ', err)
+      })
+  }
+
 
   const mapOverTasks = tasks.map((taskObj,i)=> <Todos
-  key={i} task={taskObj} deleteTodo={deleteTodo}/>)
+  key={i} task={taskObj} deleteTodo={deleteTodo}
+  toggleTodo={toggleTodo}/>)
 
   return (
     <div className="App">

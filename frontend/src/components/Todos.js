@@ -12,7 +12,9 @@ export default function Todos(props) {
       <button  onClick={()=>{
         props.deleteTodo(_id)
       }}>x</button>
-      <input type="checkbox" checked={isCompleted} id=""/>
+      <input type="checkbox" defaultChecked={isCompleted} onClick={()=>{
+        props.toggleTodo(_id, !isCompleted)
+      }}/>
 
       
       
