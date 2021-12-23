@@ -3,12 +3,12 @@
   border: Thistle solid ;
   margin: 100px 100px 100px 100px;
   box-shadow: 0 0 5px #252525;
-
+  
 }
 
 .App button{
   background-color: White;
-  border-radius: 10px;
+  
   font-size: 15px;
   width: 200px;
   border: Thistle solid ;
@@ -38,7 +38,7 @@
 }
 
 .Todos input{
-  border=radius: 10px;
+  border-radius: 10px;
 
   width: 30px;
   height: 30px;
@@ -49,4 +49,10 @@
   background-color: Thistle; 
   
 
+}
+.Add input{
+  border-color: indigo;
+  width: 200px;
+
+  height: 20px;
 }

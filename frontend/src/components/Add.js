@@ -12,7 +12,7 @@ export default function Add(props) {
   return (
     <div className="Add">
       <input
-      type="text" placeholder="Write new title here"
+      type="text" placeholder="Enter new task here"
       onChange={(e)=>{
           setNewTitle(e.target.value)
       }}/>

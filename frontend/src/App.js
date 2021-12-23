@@ -91,7 +91,7 @@ export default function App() {
     <div className="App">
       {mapOverTasks}
       <button onClick={getData}>GET TASKS</button>
-      <button onClick={deleteTasks}>DELETE COMPLETED TASKS</button>
+      <button onClick={deleteTasks}>DELETE COMPLETED</button><br></br>
       <button onClick={()=>{
         filterData(true)
       }}>DONNE</button>
