@@ -59,6 +59,29 @@ export default function App() {
       })
   }
 
+  //for delete all tasks
+  const deleteTasks = ()=>{
+    axios
+      .delete(`http://localhost:5000/todos`)
+      .then((response)=>{
+        getData()
+      })
+      .catch((err)=>{
+        console.log('ERR: ', err)
+      })
+  }
+
+  //filter
+  const filterData= (status)=>{
+    axios
+      .get(`http://localhost:5000/filter?isCompleted=${status}`)
+      .then((response)=>{
+        setTasks(response.data)
+      })
+      .catch((err)=>{
+        console.log('ERR: ', err)
+      })
+  }
 
   const mapOverTasks = tasks.map((taskObj,i)=> <Todos
   key={i} task={taskObj} deleteTodo={deleteTodo}
@@ -68,6 +91,14 @@ export default function App() {
     <div className="App">
       {mapOverTasks}
       <button onClick={getData}>GET TASKS</button>
+      <button onClick={deleteTasks}>DELETE COMPLETED TASKS</button>
+      <button onClick={()=>{
+        filterData(true)
+      }}>DONNE</button>
+      <button onClick={()=>{
+        filterData(false)
+      }}>PENDING</button>
+
 
       <Add createFunc={postNewTodo} />
       
