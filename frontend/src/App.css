@@ -1,7 +1,9 @@
 .App {
   text-align: center;
   border: Thistle solid ;
-  margin: 200px 200px 200px 200px;
+  margin: 100px 100px 100px 100px;
+  box-shadow: 0 0 5px #252525;
+
 }
 
 .App button{
@@ -14,18 +16,37 @@
 
 }
 
-.Todos p{
+.Todos span{
   text-align: center;
-  margin: 0px 10px 0px 10px;
-  background-color: Thistle; 
-  padding: 40px 90px 40px 90px;
+  margin: 20px 20px 20px 20px;
+  background-color: white; 
   font-size:20px;
   font-family: cursive;
+  padding: 20px 20px 20px 20px;
+  display: inline-block;
+
 }
 .Todos button{
   background-color: White;
+
   border-radius: 10px;
   font-size: 15px;
-  width: 50px;
+  width: 40px;
+  height: 40px;
+
   border: Thistle solid ;
+}
+
+.Todos input{
+  border=radius: 10px;
+
+  width: 30px;
+  height: 30px;
+  border: Thistle solid ;
+
+}
+.Todos{
+  background-color: Thistle; 
+  
+
 }

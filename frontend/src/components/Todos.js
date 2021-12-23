@@ -6,16 +6,18 @@ export default function Todos(props) {
   const {_id,title,isCompleted}=props.task
   return (
     <div className="Todos">
-    
-      <p style={{textDecoration:isCompleted?
-      'line-through':"none"}}>{title}</p>
-      <button  onClick={()=>{
-        props.deleteTodo(_id)
-      }}>x</button>
+       
+
       <input type="checkbox" defaultChecked={isCompleted} onClick={()=>{
         props.toggleTodo(_id, !isCompleted)
       }}/>
-
+      
+      <span style={{textDecoration:isCompleted?
+      'line-through':"none"}}>{title}</span>
+     
+      <button  onClick={()=>{
+        props.deleteTodo(_id)
+      }}>x</button>
       
       
     </div>
