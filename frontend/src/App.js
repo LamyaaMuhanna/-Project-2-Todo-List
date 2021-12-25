@@ -88,8 +88,16 @@ export default function App() {
   toggleTodo={toggleTodo}/>)
 
   return (
-    <div className="App">
-      {mapOverTasks}
+    <div className="App">    
+      
+      <div>
+        <h1>To do List</h1><br></br>
+        <Add createFunc={postNewTodo} />
+      </div><br></br> 
+      <div>
+        {mapOverTasks}
+      </div>
+      <div>
       <button onClick={getData}>GET TASKS</button>
       <button onClick={deleteTasks}>DELETE COMPLETED</button><br></br>
       <button onClick={()=>{
@@ -98,10 +106,8 @@ export default function App() {
       <button onClick={()=>{
         filterData(false)
       }}>PENDING</button>
+      </div>
 
-
-      <Add createFunc={postNewTodo} />
-      
     </div>
   );
 }

@@ -1,58 +1,60 @@
 .App {
   text-align: center;
-  border: Thistle solid ;
-  margin: 100px 100px 100px 100px;
+  margin: 100px 200px 100px 200px;
   box-shadow: 0 0 5px #252525;
-  
+  background: linear-gradient(to bottom right, #000066 0%, #660066 100%);;
+  padding: 2px;
 }
 
 .App button{
-  background-color: White;
-  
+  background-color:rgb(9, 9, 83);
+  color: white;
   font-size: 15px;
   width: 200px;
-  border: Thistle solid ;
-  font-family: cursive;
+  font-family: sans-serif;
 
 }
 
 .Todos span{
   text-align: center;
-  margin: 20px 20px 20px 20px;
+  margin: 20px 0px 20px 0px;
   background-color: white; 
   font-size:20px;
-  font-family: cursive;
-  padding: 20px 20px 20px 20px;
+  font-family: sans-serif;
+  padding: 20px 0px 20px 0px;
   display: inline-block;
-
+  width: 200px;
+  height: 10px ;
 }
 .Todos button{
-  background-color: White;
-
-  border-radius: 10px;
+  background-color: rgb(116, 7, 116);
+  color: white;  
   font-size: 15px;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 
-  border: Thistle solid ;
 }
 
 .Todos input{
-  border-radius: 10px;
-
-  width: 30px;
-  height: 30px;
-  border: Thistle solid ;
-
-}
-.Todos{
-  background-color: Thistle; 
-  
-
-}
-.Add input{
-  border-color: indigo;
-  width: 200px;
-
+  width: 20px;
   height: 20px;
+
+}
+
+
+.Add input{
+  width: 400px;
+  height: 24px;
+  position: relative;
+}
+.Add button{
+  float: center;
+  width: 70px;
+  height: 30px;
+  background-color: rgb(116, 7, 116);
+  color: white;
+  font-size: 10px solid;
+}
+.App h1{
+  color: white;
 }

@@ -16,7 +16,7 @@ export default function Add(props) {
       onChange={(e)=>{
           setNewTitle(e.target.value)
       }}/>
-      <button onClick={createNewTodo}>Create New Todo</button>
+      <button onClick={createNewTodo}>Add</button>
     </div>
   )
 }
